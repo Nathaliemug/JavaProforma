@@ -6,48 +6,77 @@ public class AvantApres {
 
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
-		int jour, mois, année;
+		int jourSaisie, moisSaisie, annéeSaisie, mois, jour, année;
 		
 		System.out.println("entrez le jour : ");
-		jour = new Scanner(System.in).nextInt();
+		jourSaisie = new Scanner(System.in).nextInt();
 		System.out.println("entrez le mois : ");
-		mois = new Scanner(System.in).nextInt();
+		moisSaisie = new Scanner(System.in).nextInt();
 		System.out.println("entrez l'année : ");
-		année = new Scanner(System.in).nextInt();
-		if(!(jour>0 && jour<31))
-		{
-			System.out.println("il me faut la vrai date du jour svp!");
+		annéeSaisie = new Scanner(System.in).nextInt();
 		
 		
-		if(mois<0 && mois>12)
+		if (!(jourSaisie>1)&&(jourSaisie<31))
 		{
-			if(jour == 1 && mois ==1)
+			
+			
+			if((jourSaisie==1 && moisSaisie==1))
 			{
-				if(mois>=4 && mois!=11 && mois!=5 && mois!=7 && mois!=8 && mois!=10)
-				{
-					jour = 30;
-					
-				}
-				if((mois<=4 && mois!=4 && mois!=6 && mois!=9 && mois!=11)||(mois ==28 || mois ==29))
-				{
-					jour = 31;
-					
-				}
-				mois = mois-1;
-			}else
-			{
-				System.out.println("ATTENTION!!!!!!!il existe 12 mois dans un an");
+				mois=12;
+				jour = 31;
+				année = annéeSaisie-1;
+				System.out.println("la date de la veille : " + jour + "-" + mois + "-" + année);
+				System.out.println("la date du lendemain : "+ (jourSaisie+1) + "-" + moisSaisie + "-" + annéeSaisie);
 			}
 			
-		}
-		if(((année%4==0 && !(année%100==0)) ^ (année%400==0)))
-		{
+			else if(jourSaisie==1){
+				mois = moisSaisie-1;
+				jour = 31;
+				System.out.println("la date de la veille : " + jour + "-" + mois + "-" + annéeSaisie);
+				System.out.println("la date du lendemain : "+ (jourSaisie+1) + "-" + moisSaisie + "-" + (annéeSaisie) );
+			}
 			
-				System.out.println("la date de la veille : " +(jour-1) + "/" + mois + "/" +année );
 			
-			System.out.println("la date du lendemain: " +(jour+1) + "/" + mois + "/" +année );
+			else if(jourSaisie==30 || jourSaisie==31) {
+				jour=1;
+				mois=moisSaisie+1;
+				
+				System.out.println("la date du de la veille : "+ (jour) + "-" + (mois) + "-" + (annéeSaisie) );
+				System.out.println("la date du lendemain : "+ (jour) + "-" + (mois) + "-" + (annéeSaisie) );
+			}
+			
+			else if(jourSaisie==31 && moisSaisie==12) {
+				jour=1;
+				année=annéeSaisie+1;
+				mois=1;
+				
+				
+				System.out.println("la date de la veille : "+ (jourSaisie-1) + "-" + (moisSaisie) + "-" + (annéeSaisie) );
+				System.out.println("la date du lendemain : "+ (jour) + "-" + (mois) + "-" + (année) );
+			}
+
+			else if((annéeSaisie%4==0 && !(annéeSaisie%100==0)) ^ (annéeSaisie%400==0)&&(jourSaisie==1 && moisSaisie==3)) {
+			
+				jour=29;
+				mois = moisSaisie-1;
+				System.out.println("la date de la veille : " + jour+ "-" + mois + "-" + annéeSaisie);
+				System.out.println("la date du lendemain : "+ (jourSaisie+1) + "-" + (moisSaisie) + "-" + (annéeSaisie) );
+			}else {
+				jour=29;
+				mois = moisSaisie-1;
+				System.out.println("la date de la veille : " + jour+ "-" + mois + "-" + annéeSaisie);
+				System.out.println("la date du lendemain : "+ (jourSaisie+1) + "-" + (moisSaisie) + "-" + (annéeSaisie) );
+			}
+			
+			
+		}else {
+			
+			
+			System.out.println("la date de la veille : " + (jourSaisie-1) + "-" + moisSaisie + "-" + annéeSaisie);
+			System.out.println("la date du lendemain : "+ (jourSaisie+1) + "-" + moisSaisie + "-" + annéeSaisie);
 		}
 		
-	
-}
-}
+		}
+		
+		}
+
