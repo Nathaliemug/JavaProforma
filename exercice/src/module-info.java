@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author stagiaires
+ *
+ */
+module exercice {
+}
