@@ -11,7 +11,7 @@ public class Chiffre {
 		nb= new Scanner(System.in).nextInt();
 		
 			
-			while(!(nb<=3)) 
+			while(!(nb>=1 &&nb<=3)) 
 			{
 				System.out.println( "Entrer un chiffre jusqu'à ce que le chiffre corresponde à 0,1,2 ou 3");
 				nb= new Scanner(System.in).nextInt();
