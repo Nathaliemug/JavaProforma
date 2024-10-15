@@ -33,16 +33,17 @@ public class Intervalle {
 			nb1 = nb2;
 			nb2 = temp;
 		}
-		
-     temp = nb1;
+
+		temp = nb1;
 		while (nb1 <= nb2) {
 
-			somme = somme+nb1;
+			somme = somme + nb1;
 			nb1++;
 
 		}
 
-		System.out.println("la somme des nombres entiers compris dans l’intervalle de  "+ temp + " à " + nb2 + " est :" + somme);
+		System.out.println(
+				"la somme des nombres entiers compris dans l’intervalle de  " + temp + " à " + nb2 + " est :" + somme);
 
 	}
 
